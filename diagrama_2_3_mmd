@@ -1,0 +1,16 @@
+classDiagram
+
+class Jugador {
+  cedula
+  apellido
+}
+
+class Equipo {
+  nombre
+}
+
+%% Relación: integra
+Jugador "1" --> "11..*" Equipo : integra
+
+%% Relación: capitanea
+Jugador "0..1" --> "1" Equipo : capitanea
