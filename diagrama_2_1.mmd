@@ -1,0 +1,25 @@
+classDiagram
+
+class ALUMNO {
+  +idAlumno
+  +nombre
+}
+
+class EXAMEN {
+  +idExamen
+  +materia
+}
+
+class PROFESOR {
+  +idProfesor
+  +nombre
+}
+
+class RENDIR_EXAMEN {
+  +fecha
+  +nota
+}
+
+ALUMNO "1" --> "0..*" RENDIR_EXAMEN
+EXAMEN "1" --> "0..*" RENDIR_EXAMEN
+PROFESOR "1" --> "0..*" RENDIR_EXAMEN
