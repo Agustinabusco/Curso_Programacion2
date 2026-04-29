@@ -9,8 +9,8 @@ class Equipo {
   nombre
 }
 
-%% Relación: integra
+%% Relaciï¿½n: integra
 Jugador "1" --> "11..*" Equipo : integra
 
-%% Relación: capitanea
+%% Relaciï¿½n: capitanea
 Jugador "0..1" --> "1" Equipo : capitanea
