@@ -1,0 +1,82 @@
+erDiagram
+    %% Entidades Principales
+    CLIENTE {
+        string tipo_doc PK
+        string num_doc PK
+        string nombre
+        string apellido
+        string localidad
+        string direccion
+    }
+
+    CLIENTE_TELEFONO {
+        string tipo_doc PK, FK
+        string num_doc PK, FK
+        string telefono PK
+    }
+
+    EMPLEADO {
+        string cod_empleado PK
+        string nombre
+        string apellido
+        string direccion
+        date fecha_ingreso
+    }
+
+    EMPLEADO_MAIL {
+        string cod_empleado PK, FK
+        string email PK
+    }
+
+    CUENTA {
+        string cod_sucursal PK
+        string cod_cuenta PK
+        float saldo
+        string tipo_doc_titular FK
+        string num_doc_titular FK
+    }
+
+    %% Especialización de Cuentas (Herencia)
+    CAJA_AHORRO {
+        string cod_sucursal PK, FK
+        string cod_cuenta PK, FK
+        float porcentaje_interes
+    }
+
+    PLAZO_FIJO {
+        string cod_sucursal PK, FK
+        string cod_cuenta PK, FK
+        int tiempo_dias
+    }
+
+    CUENTA_CORRIENTE {
+        string cod_sucursal PK, FK
+        string cod_cuenta PK, FK
+        float importe_descubierto
+    }
+
+    TRANSACCION {
+        int id_transaccion PK
+        string sucursal_trans
+        datetime fecha
+        string tipo_movimiento
+        float importe
+        string cod_sucursal_cta FK
+        string cod_cuenta_cta FK
+    }
+
+    %% Relaciones
+    CLIENTE ||--o{ CLIENTE_TELEFONO : "tiene"
+    EMPLEADO ||--o{ EMPLEADO_MAIL : "tiene"
+    
+    CLIENTE ||--o{ CUENTA : "es titular de"
+    CLIENTE }o--o{ CUENTA : "autorizado en"
+
+    CUENTA ||--|{ CAJA_AHORRO : "puede ser"
+    CUENTA ||--|{ PLAZO_FIJO : "puede ser"
+    CUENTA ||--|{ CUENTA_CORRIENTE : "puede ser"
+
+    CUENTA ||--o{ TRANSACCION : "registra"
+    
+    %% Relación N:M entre Transacción y Empleado
+    TRANSACCION }o--o{ EMPLEADO : "atendida por (varios funcionarios)"

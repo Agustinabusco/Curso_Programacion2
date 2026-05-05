@@ -1,0 +1,36 @@
+classDiagram
+
+class Libro {
+  +INB
+  +autor
+  +titulo
+}
+
+class Usuario {
+  +cedula
+  +nombre
+  +apellido
+  +curso
+  +matricula
+  +registrarPrestamo()
+}
+
+class Categoria {
+  +id_categoria
+  +nombre
+  +descripcion
+  +filtrarLibros()
+}
+
+class Prestamo {
+  +id_prestamo
+  +fecha_prestamo
+  +fecha_devolucion
+  +registrarDevolucion()
+}
+
+
+Usuario "1" --> "0..*" Prestamo : realiza
+Libro "1" --> "0..*" Prestamo : se_presta
+Categoria "1" --> "0..*" Libro : clasifica
+
