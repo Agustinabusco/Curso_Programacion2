@@ -1,7 +1,7 @@
 classDiagram
 
 class Libro {
-  +INB
+  +ISBN
   +autor
   +titulo
 }
@@ -29,8 +29,7 @@ class Prestamo {
   +registrarDevolucion()
 }
 
-
+%% Relaciones
 Usuario "1" --> "0..*" Prestamo : realiza
-Libro "1" --> "0..*" Prestamo : se_presta
+Libro "1" --> "0..*" Prestamo : es prestado en
 Categoria "1" --> "0..*" Libro : clasifica
-
