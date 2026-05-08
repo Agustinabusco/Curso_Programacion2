@@ -1,7 +1,7 @@
 from moviepy import VideoFileClip, concatenate_videoclips
 
 # Poné el nombre exacto de tu video
-nombre_entrada = "tu_video.mp4" 
+nombre_entrada = "video_informatica.mp4" 
 nombre_salida = "video_final_sin_audio.mp4"
 
 print("Iniciando...")
