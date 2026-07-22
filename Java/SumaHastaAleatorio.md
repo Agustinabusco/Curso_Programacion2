@@ -142,6 +142,7 @@ Todavía no se ha generado ningún número. Solamente hemos creado la herramient
 
 5. Generación y almacenamiento del número m
 int m = aleatorio.nextInt(20) + 1;
+nextInt: es un metodo que siemre hace lo mismo pero dependiendo con quien lo complementes, por ejemplo con la herramienta scanner lo que va a hacer es buscar lo que escribe el usuario y si usamos random lo que va  ahacer es buscaf un numero al azar.
 
 Esta línea hace varias cosas al mismo tiempo:
 
