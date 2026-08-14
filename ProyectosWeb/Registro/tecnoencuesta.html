@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Evento Tecnológico</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Evento de Avances Tecnológicos</h1>
+
+        <p class="descripcion">
+            Completa el formulario para registrarte en nuestro evento sobre
+            tecnología, robótica e inteligencia artificial.
+        </p>
+
+        <form id="formularioRegistro">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <p class="titulo-opcion">Área de interés:</p>
+
+            <div class="opciones">
+                <label>
+                    <input type="radio" name="interes" value="Tecnología Cuántica" required>
+                    Tecnología Cuántica
+                </label>
+
+                <label>
+                    <input type="radio" name="interes" value="Robótica Avanzada">
+                    Robótica Avanzada
+                </label>
+
+                <label>
+                    <input type="radio" name="interes" value="Ética en la Inteligencia Artificial">
+                    Ética en la Inteligencia Artificial
+                </label>
+            </div>
+
+            <label for="experiencia">Nivel de experiencia:</label>
+
+            <select id="experiencia">
+                <option value="Principiante">Principiante</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+                <option value="Experto">Experto</option>
+            </select>
+
+            <div class="boletin">
+                <input type="checkbox" id="suscripcion">
+                <label for="suscripcion">
+                    Deseo suscribirme al boletín informativo mensual
+                </label>
+            </div>
+
+            <button type="submit">Registrar</button>
+
+        </form>
+
+        <div id="confirmacion"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
